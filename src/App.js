@@ -1,5 +1,6 @@
 import{BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Login from './pages/login';
+import Home from './pages/home';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -14,6 +15,12 @@ function App() {
           <Login />
         </Suspense>
         } />
+
+        <Route path='/home' element={ 
+          <Suspense fallback={<div className='loader'> Loading...</div>}>
+            <Home />
+          </Suspense>
+          } />
       </Routes>
     </Router>
   );
